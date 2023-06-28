@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(void){
+float var = 2.5;
+
+float *ponteiro;
+
+pontiero = &var;
+
+printf("var = %f \n, ponteiro = %p \n ", van, ponteiro);
+
+return 0;
+
+}
