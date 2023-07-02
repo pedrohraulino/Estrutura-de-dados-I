@@ -1,0 +1,40 @@
+1 - x: 3 y: 4 *p: 4 (p seria o endereço de memória de y)
+
+2-
+a) Vai ser exibida uma mensagem de erro
+b) Esta sendo exibida uma mensagem de erro pois esta faltando o "&" para endereçar "x" ao ponteiro "p"
+c) Não, o programada apresentou erro 
+d)
+#include <stdio.h>
+
+int main(void) {
+    int x, *p;
+    x = 100;
+    p = &x;  // atribuição do endereço de x ao ponteiro p
+    printf("Valor de p = %p\tValor de *p = %d", p, *p);
+    return 0;
+}
+e) O progrma foi compilado com sucesso
+
+3- 11	20	10	30
+
+4- 
+#include <stdio.h>
+#include <math.h>
+
+void calcula_hexagono(float lado, float *area, float *perimetro) {
+    *perimetro = 6 * lado;
+    *area = (3 * pow(lado, 2) * sqrt(3)) / 2;
+}
+
+int main(void) {
+    float lado, area, perimetro;
+    scanf("%f", &lado);
+
+    calcula_hexagono(lado, &area, &perimetro);
+
+    printf("Area = %.2f \nPerimetro = %.2f \n", area, perimetro);
+
+    return 0;
+}
+
