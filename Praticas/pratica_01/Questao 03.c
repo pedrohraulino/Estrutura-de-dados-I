@@ -7,7 +7,7 @@ int main (void){
     
     printf("digita o tamanho\n");
     scanf("%d", &tamanho);
-    
+
     linhas = tamanho;
     colunas = tamanho;
     int **matriz = (int**) malloc(linhas * sizeof(int*));
@@ -40,6 +40,10 @@ int main (void){
             printf("%d ", matriz[linha][coluna]);
         }
         printf("\n");
+    }
+
+    for (linha = 0; linha < linhas; linha++) {
+        free(matriz[linha]);
     }
    
     free(matriz);
