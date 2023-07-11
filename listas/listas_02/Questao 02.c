@@ -40,7 +40,7 @@ int main(void) {
 
         notaAluno[contador] = correto * 10.0 / numeroDeQuestoes;
 
-        printf("A nota do aluno %d foi: %.1f\n", contador + 1, alunos[1][contador]);
+       //  printf("A nota do aluno %d foi: %.1f\n", contador + 1, alunos[1][contador]); duvida para a aula //
 
         printf("A nota do aluno %d foi: %.1f\n", contador + 1, notaAluno[contador]);
 
