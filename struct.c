@@ -1,29 +1,27 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-struct aluno
+typedef struct estruturaAluno
 {
     char nome[50];
     int idade;
     int matricula;
-};
+} Aluno;
 
-int main (void){
+int main(void)
+{
+    Aluno estruturaAluno;
 
-    struct aluno estruturaAuno; 
+    printf("Digite o nome do aluno: \n");
+    scanf(" %[^\n]", estruturaAluno.nome);
 
-    printf("digite o nome do aluno \n");
-    scanf(" %[^\n]", estruturaAuno.nome);
+    printf("Digite a idade do aluno: \n");
+    scanf(" %d", &estruturaAluno.idade);
 
-    printf("digite a idade do aluno \n");
-    scanf(" %d", &estruturaAuno.idade);
+    printf("Digite a matricula do aluno: \n");
+    scanf(" %d", &estruturaAluno.matricula);
 
-    printf("digite o nome do aluno \n");
-    scanf(" %d", &estruturaAuno.matricula);
-
-
-    printf("o nome do aluno de matricula: %d é %s. Ele tem %d anos", estruturaAuno.matricula, estruturaAuno.nome, estruturaAuno.idade);
-
+    printf("O nome do aluno de matricula %d é %s. Ele tem %d anos.\n", estruturaAluno.matricula, estruturaAluno.nome, estruturaAluno.idade);
 
     return 0;
 }
