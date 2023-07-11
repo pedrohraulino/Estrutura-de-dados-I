@@ -8,10 +8,10 @@ int main(void) {
 
     char *gabarito = (char *)malloc(numeroDeQuestoes * sizeof(char));
     char **alunos = (char **)malloc(numeroDeQuestoes * sizeof(char *));
-    char *aluno = (char *)malloc(10 * sizeof(char));
+    char *resposta = (char *)malloc(10 * sizeof(char));
     float *notaAluno = (float *)malloc(10 * sizeof(float));
 
-    alunos[0] = aluno;
+    alunos[0] = resposta;
     alunos[1] = notaAluno;
 
     for (contador = 0; contador < numeroDeQuestoes; contador++) {
@@ -40,6 +40,10 @@ int main(void) {
 
         notaAluno[contador] = correto * 10.0 / numeroDeQuestoes;
 
+        printf("A nota do aluno %d foi: %.1f\n", contador + 1, alunos[1][contador]);
+
+        printf("A nota do aluno %d foi: %.1f\n", contador + 1, notaAluno[contador]);
+
         if (notaAluno[contador] >= 6) {
             aprovado++;
         }
@@ -53,7 +57,7 @@ int main(void) {
 
 
     free(gabarito);
-    free(aluno);
+    free(resposta);
     free(alunos);
 
     return 0;
