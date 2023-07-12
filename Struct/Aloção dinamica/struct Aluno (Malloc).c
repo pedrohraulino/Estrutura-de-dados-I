@@ -18,9 +18,7 @@ typedef struct aluno
 
 } Aluno;
 
-
-int main(void)
-{
+Aluno * cadastroAluno(void){
     Aluno * estruturaAluno =  (Aluno *) malloc (sizeof(Aluno));
     
     if (estruturaAluno  == NULL){
@@ -44,11 +42,18 @@ int main(void)
     scanf(" %d", &estruturaAluno->matricula);
 
     printf("Digite as disciplinas: \n");
-    scanf(" %[^\n]", &estruturaAluno->disciplina[0].nome);
-    scanf(" %[^\n]", &estruturaAluno->disciplina[1].nome);
+    scanf(" %[^\n]", estruturaAluno->disciplina[0].nome);
+    scanf(" %[^\n]", estruturaAluno->disciplina[1].nome);
 
     printf("Digite a nota: \n");
     scanf(" %f", &estruturaAluno->disciplina->nota);
+
+    return estruturaAluno;
+}
+
+int main(void)
+{   
+    Aluno * estruturaAluno = cadastroAluno();
 
     printf("O nome do aluno de matricula %d é %s. Ele tem %d anos.%s esta matriculado na disciplina: %s  %s com nota: %.2f\n", estruturaAluno->matricula, estruturaAluno->nome, estruturaAluno->idade, estruturaAluno->nome, estruturaAluno->disciplina[0].nome,estruturaAluno->disciplina[1].nome, estruturaAluno->disciplina->nota);
 
