@@ -29,7 +29,6 @@ int main(void)
     }
 
     for (int contador = 0; contador < 2; contador++){    
-        printf("A pessoa de CPF %s é %s. Ele tem %.2f cm de altura e tem %d anos.\n", dadosPessoa[contador].cpf, dadosPessoa[contador].nome, dadosPessoa[contador].altura, dadosPessoa[contador].idade);
     }
 
     return 0;
