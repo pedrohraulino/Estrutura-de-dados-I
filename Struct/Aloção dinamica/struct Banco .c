@@ -12,7 +12,7 @@ typedef struct banco
 
 int main(void)
 {
-    Banco dadosDaConta[5];
+    Banco * dadosDaConta = (Banco *) malloc (5*sizeof(Banco));
 
     for (int contador = 0; contador < 5; contador++){
 
