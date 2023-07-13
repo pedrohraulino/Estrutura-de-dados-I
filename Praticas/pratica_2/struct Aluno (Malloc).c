@@ -1,0 +1,101 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+typedef struct funcionario
+{
+    char nome[50];
+    char cargo[20];
+    float salario;
+    int id;
+} Funcionario;
+
+Funcionario * cadastroFuncionario(int *quantidade){
+
+    printf("Digite a quantiadde de funcionários que sua empresa tem: \n");
+    scanf(" %d", quantidade); 
+
+    Funcionario * dadosFuncionario =  (Funcionario *) malloc (*quantidade*sizeof(Funcionario));
+    
+    if (dadosFuncionario  == NULL){
+        printf("Não foi possivel alocar a memoria");
+        exit(1);
+    }
+    
+
+    for (int contador = 0; contador < *quantidade; contador++)
+    {
+    printf("Digite o nome do funcionario: \n");
+    scanf(" %[^\n]", dadosFuncionario[contador].nome);
+    
+    printf("Digite o cargo: \n");
+    scanf(" %[^\n]", dadosFuncionario[contador].cargo);
+
+    printf("Digite o ID: \n");
+    scanf(" %d", &dadosFuncionario[contador].id);
+
+    printf("Digite o salario: \n");
+    scanf(" %f", &dadosFuncionario[contador].salario);
+    }
+    
+
+
+    return dadosFuncionario;
+}
+
+void alteraSalario(Funcionario *dadosFuncionario){
+
+    printf("Digite o novo salario: \n");
+    scanf(" %f", &dadosFuncionario->salario);
+
+}
+
+float maiorSalario(Funcionario *dadosFuncionario, int *quantidade){
+    float maior;
+    for(int contador=0; contador < *quantidade; contador++){
+
+        if(dadosFuncionario[contador].salario>maior){
+            
+            maior=dadosFuncionario[contador].salario;
+        }
+    }
+
+    return maior;
+}
+
+float menorSalario(Funcionario *dadosFuncionario, int *quantidade){
+    float menor = dadosFuncionario[0].salario;
+    for(int contador=0; contador < *quantidade; contador++){
+
+        if(dadosFuncionario[contador].salario<menor){
+            
+            menor=dadosFuncionario[contador].salario;
+        }
+    }
+
+    return menor;
+}
+
+int main(void)
+{   
+    int quantidade = 0;
+    
+    Funcionario *dadosFuncionario = cadastroFuncionario(&quantidade);
+
+    printf("quantidade: %d \n", quantidade);
+
+    printf("O Funcionário de id %d é %s. Ele tem o cargo de:%s e recebe: %.2f\n", dadosFuncionario->id,  dadosFuncionario->nome, dadosFuncionario->cargo, dadosFuncionario->salario);
+
+    alteraSalario(dadosFuncionario);
+    printf("O novo salario é: %.2f\n", dadosFuncionario->salario);
+
+    float menor = menorSalario(dadosFuncionario, &quantidade);
+    printf("O menor salario é: %.2f\n", menor);
+
+    float maior = maiorSalario(dadosFuncionario, &quantidade);
+    printf("O maior salario é: %.2f\n", maior);
+
+
+    free(dadosFuncionario);
+
+    return 0;
+}
