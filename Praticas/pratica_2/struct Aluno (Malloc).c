@@ -42,12 +42,22 @@ Funcionario * cadastroFuncionario(int *quantidade){
     return dadosFuncionario;
 }
 
-void alteraSalario(Funcionario *dadosFuncionario){
+void alteraSalario(Funcionario *dadosFuncionario, int *quantidade) {
+    int indiceFuncionario;
+    
+    printf("A lista de funcionários é: \n");
+    for (int i = 0; i < *quantidade; i++) {
+        printf("%d: %s \n", i+1, dadosFuncionario[i].nome);
+    }
 
-    printf("Digite o novo salario: \n");
-    scanf(" %f", &dadosFuncionario->salario);
-
+    printf("Digite a posição do funcionário na lista que deseja alterar o salário: \n");
+    scanf("%d", &indiceFuncionario);
+    indiceFuncionario -= 1;
+    printf("Digite o novo salário: \n");
+    scanf(" %f", &dadosFuncionario[indiceFuncionario].salario);
+    printf("O novo salário de %s é: %.2f\n", dadosFuncionario[indiceFuncionario].nome, dadosFuncionario[indiceFuncionario].salario);
 }
+
 
 float maiorSalario(Funcionario *dadosFuncionario, int *quantidade){
     float maior;
@@ -81,12 +91,11 @@ int main(void)
     
     Funcionario *dadosFuncionario = cadastroFuncionario(&quantidade);
 
-    printf("quantidade: %d \n", quantidade);
+    printf("A empresa tem: %d funcionarios \n", quantidade);
 
     printf("O Funcionário de id %d é %s. Ele tem o cargo de:%s e recebe: %.2f\n", dadosFuncionario->id,  dadosFuncionario->nome, dadosFuncionario->cargo, dadosFuncionario->salario);
 
-    alteraSalario(dadosFuncionario);
-    printf("O novo salario é: %.2f\n", dadosFuncionario->salario);
+    alteraSalario(dadosFuncionario, &quantidade);
 
     float menor = menorSalario(dadosFuncionario, &quantidade);
     printf("O menor salario é: %.2f\n", menor);
