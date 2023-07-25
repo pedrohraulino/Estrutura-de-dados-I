@@ -16,7 +16,6 @@ Aluno* tab[MAX];
 // // Função para inicializar o vetor de ponteiros com NULL
 void inicializa (int n, Aluno** tab){
     int i;
-
     for(i=0; i<n; i++){
         tab[i]= NULL;
     }
