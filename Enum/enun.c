@@ -6,6 +6,7 @@ typedef enum boolean {
 
 
 
+
 int main() { 
     bool b; 
     printf("Digite O ou 1\n");
