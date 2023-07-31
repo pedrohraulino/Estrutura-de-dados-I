@@ -52,6 +52,12 @@ int main (void){
 
     }
 
+        for (linha = 0; linha < linhas; linha++)
+    {
+        printf("%d - %s tem %d ano(s)\n",linha+1, matriz[linha],vetor[linha]);
+
+    }
+
 
     for (linha = 0; linha < linhas; linha++){
            printf("%s \n", matriz[linha]);
