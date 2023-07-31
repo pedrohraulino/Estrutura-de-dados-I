@@ -38,7 +38,7 @@ int main(void) {
     printf("Digite o ANO: \n");
     scanf("%d]", &data.ano);
 
-    printf("A data é:%d/%d/%d \n", data.dia, data.mes+1, data.ano);
+    printf("A data eh:%d/%d/%d \n", data.dia, data.mes+1, data.ano);
     
     return 0;
 }
