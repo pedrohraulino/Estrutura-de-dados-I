@@ -15,7 +15,7 @@ int main(void){
         printf("arquivo aberto");
     }
 
-    scanf(fp,"%s",str);
+    fscanf(fp,"%s",str);
     printf("%s\n", str);
 
 
