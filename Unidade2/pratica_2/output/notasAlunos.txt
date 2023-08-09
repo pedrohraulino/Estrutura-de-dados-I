@@ -1,0 +1,5 @@
+4
+pdro 2.00
+joao 4.00
+maria 4.00
+ana 6.00
