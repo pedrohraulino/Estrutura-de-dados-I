@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "atividade_01": "cpp"
+        "atividade_01": "cpp",
+        "contabancaria.h": "c",
+        "aluno.h": "c"
     }
 }
